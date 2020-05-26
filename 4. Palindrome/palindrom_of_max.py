@@ -17,12 +17,13 @@ class PalindromeNumberGenerator:
         """Generate palindrome for single numbers."""
         if max_length < 2:
             return "Sorry, single digit integers have no palindrome products!!"
-        max_numbers = int(math.pow(10, max_length))
+        out_of_range_number = int(math.pow(10, max_length))
+        min_number = int(math.pow(10, max_length - 1))
         arranged_pals = []
         pals_prod = {}
 
-        for num in range(1, max_numbers):
-            for num1 in range(1, max_numbers):
+        for num in range(min_number, out_of_range_number):
+            for num1 in range(min_number, out_of_range_number):
                 product = num * num1
                 is_palind = self.check_if_palindrome(product, num, num1)
 
